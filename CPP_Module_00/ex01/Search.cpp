@@ -23,4 +23,22 @@ void Phonebook::SEARCH()
 
         std::cout << std::endl; // sadece endl yazsak olmuyor mu illa cout da yazmamız gerekiyor mu       
     }
+
+    int select = 0;
+
+    std::cout << "aralarinda sayi secin 1 ve " << add << " : ";
+    std::cin >> select;
+
+    while(select > add || select < 1)
+    {
+        std::cout << std::endl << "aralarinda sayi secin 1 ve " << add << " : ";
+        std::cin >> select;
+    }
+
+    std::cout << "Name          :" << person[select - 1].getName() << std::endl;
+    std::cout << "Surname       :" << person[select - 1].getSurname() << std::end;
+    std::cout << "Nickname      :" << person[select - 1].getNickName() << std::endl;
+    std::cout << "Phone Number  :" << person[select - 1].getPhoneNumber() << std::endl;
+    std::cout << "D. Secret     :" << person[select - 1].getDarkestSecret() << std::endl;
+    std::cin.ignore();
 }
