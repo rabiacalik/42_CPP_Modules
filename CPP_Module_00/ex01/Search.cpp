@@ -29,10 +29,20 @@ void Phonebook::SEARCH()
 
     int select = 0;
 
-    std::cout << "Choose a number between 1 and "
-}
+    std::cout << "Choose a number between 1 and " << add << " : ";
 
-/*
-setw --> bosluk bırakmamızı saglıyor
-substr --> 0 dan basla 9 a kadar alt dizin olustur
-*/
+
+    while(!(std::cin >> select) || select > add || select < 1 || !std::isdigit(select)) 
+    {
+        std::cout << std::endl << "Chose a number between 1 and " << add << " : ";
+        std::cin >> select;
+        std::cin.ignore();
+    }
+
+    std::cout << "Name          :" << person[select - 1].getName() << std::endl;
+    std::cout << "Surname       :" << person[select - 1].getSurname() << std::endl;
+    std::cout << "NickName      :" << person[select - 1].getNickName() << std::endl;
+    std::cout << "Phone Number  :" << person[select - 1].getName() << std::endl;
+    std::cout << "Darkes Secret :" << person[select - 1].getDarkestSecret() << std::endl;
+    std::cin.ignore();
+}

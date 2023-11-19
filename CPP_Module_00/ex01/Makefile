@@ -1,8 +1,8 @@
 NAME	= PhoneBook
 
-SRC		= Add.cpp
-		  PhoneBook.cpp
-		  Search.cpp 
+SRC		= Add.cpp \
+		  Phonebook.cpp \
+		  Search.cpp \
 		  SetGet.cpp
  
 OBJ		= $(SRC:.cpp=.o)
