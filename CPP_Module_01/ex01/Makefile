@@ -1,19 +1,22 @@
-NAME = zombie
-SRC = main.cpp Zombie.cpp ZombieHorde.cpp
+NAME	= Zombies
 
-CC = g++
-CFLAGS = -Wall -Wextra -Werror -W -std=c++98
+SRC		= $(wildcard *.cpp)
+OBJ		= $(SRC:.cpp=.o)
 
-all: $(NAME)
+RM		= rm -rf
+CC		= g++
+FLAGS	= -Wall -Wextra -Werror -std=c++98
 
-$(NAME): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+$(NAME) :
+		$(CC) $(FLAGS) -c $(SRC)
+		$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+
+all	: $(NAME)
 
 clean:
-	rm -rf $(NAME)
+	$(RM) $(OBJ)
 
 fclean: clean
+	$(RM) $(NAME)
 
 re: fclean all
-
-.PHONY: all clean fclean re

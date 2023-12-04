@@ -1,17 +1,20 @@
 #include "Zombie.hpp"
 
-// ikinci bir counstructer oluşturduk ama kullanmadık
-// gereksiz bir şey mi diğer yapanlarla karşılaştır.
-int main()
-{
-    Zombie *zombie = ZombieHorde(20, "rabia");
+int main(void) {
+    
+    Zombie* z;
+    std::string a =  "Zombies";
+    int n = 5;
+    z = zombieHorde(n, a);
 
-    int i = 0;
-    while (i < 20)
-    {
-        zombie[i].announce();
-        i++;
+    for(int i = 0; i < n; i++){
+        z[i].announce();
     }
 
-    delete [] zombie;
+    delete[] z;
 }
+/*
+    gerekli kontroller yapıldı +++
+    header eklenecek
+    leaks kontrolu yapılacak
+*/
