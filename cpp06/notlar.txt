@@ -1,0 +1,45 @@
+[ nan ] -> not a number
+    - matematiksel bir işlem sonucunda geçerli bir sayı elde edilmediğinde
+      kullanılır. Sıfıra bölme sonucunda olabilir
+
+[ +inf  -inf ] -> pozitif sonsuz ve negatif sonsuz
+
+[ +inff  -inff ] -> (kayan noktalı sayılarda) pozitif ve negatif sonsuzlar
+
+compare() -> fonksiyon iki stringi karsılastırı ve esitse sıfır doner
+
+_______________________________________________________________________________________________
+------------------------------------------------------------------------------------------------
+Türkçe Çeviri:ex00
+------------------------------------------------------------------------------------------------
+
+ScalarConverter adlı bir statik sınıf yazmanız isteniyor. 
+Bu sınıfın, bir C++ literalinin en yaygın biçimindeki string temsilini parametre 
+olarak alan bir "convert" metodu olacak. Bu literal, aşağıdaki skaler türlerden 
+birine ait olmalıdır:
+
+char
+int
+float
+double
+char parametreleri dışında yalnızca ondalık gösterim kullanılacaktır.
+
+Sınıfın yapması gerekenler:
+
+String literalini doğru skaler türe dönüştürmek:
+
+char literalleri için: 'c', 'a' gibi tek karakterlik literaller dönüştürülmelidir. Görüntülenemeyen karakterler için bilgilendirici bir mesaj yazdırılmalıdır.
+int literalleri için: 0, -42, 42 gibi tam sayı literalleri dönüştürülmelidir.
+float literalleri için: 0.0f, -4.2f, 4.2f gibi ondalık sayı literalleri dönüştürülmelidir. -inff, +inff ve nanf gibi sözde literaller de işlenmelidir.
+double literalleri için: 0.0, -4.2, 4.2 gibi ondalık sayı literalleri dönüştürülmelidir. -inf, +inf ve nan gibi sözde literaller de işlenmelidir.
+Dönüştürülen değeri uygun skaler türde döndürmek:
+
+char için: char türü değerini döndürür.
+int için: int türü değerini döndürür.
+float için: float türü değerini döndürür.
+double için: double türü değerini döndürür.
+
+Örnek Kullanım:
+int myInt = ScalarConverter::convert("42");
+float myFloat = ScalarConverter::convert("3.14f");
+char myChar = ScalarConverter::convert("a");

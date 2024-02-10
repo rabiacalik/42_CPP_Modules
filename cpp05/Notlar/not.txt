@@ -1,0 +1,7 @@
+class MyException : public std::exception {
+public:
+    virtual const char* what() const noexcept override {
+        return "Bu benim özel istisna sınıfımdan fırlatılan bir istisnadır.";
+    }
+};
+ bu sınıfı std::exception sınıfından türetmek ve what fonksiyonunu uygun bir şekilde override etmek iyi bir uygulama yöntemidir.
